@@ -30,6 +30,12 @@ clipboardEl.addEventListener('click', () => {
 
 generateEl.addEventListener('click', () => {
     const length = Number(lengthEl.value);
+    if(length > 20 || length < 5) {
+        alert('Password should be in the range 5-20 characters');
+        lengthEl.value = 20;
+        return;
+    }
+    
     const hasLower = lowercaseEl.checked;
     const hasUpper = uppercaseEl.checked;
     const hasNumber = numbersEl.checked;
